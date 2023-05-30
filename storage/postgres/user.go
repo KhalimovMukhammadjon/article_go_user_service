@@ -23,13 +23,6 @@ func NewUserRepo(db *pgxpool.Pool) storage.UserRepoI {
 	}
 }
 
-// Create(ctx context.Context, req *user_service.CreateUserRequest) (resp *user_service.PrimaryKey, err error)
-// GetById(ctx context.Context, req *user_service.PrimaryKey) (resp *user_service.User, err error)
-// GetList(ctx context.Context, req *user_service.GetAllUserRequest) (resp *user_service.GetAllUserResponse, err error)
-// Update(ctx context.Context, req *user_service.UpdateUserRequest) error
-// PatchUpdate(ctx context.Context, req *user_service.UpdatePatchUser) (rowsAffected int64, err error)
-// Delete(ctx context.Context, req *user_service.PrimaryKey) (err error)
-
 func (u *userRepo) Create(ctx context.Context, req *user_service.CreateUserRequest) (resp *user_service.PrimaryKey, err error) {
 	query := `
 		INSERT INTO users
