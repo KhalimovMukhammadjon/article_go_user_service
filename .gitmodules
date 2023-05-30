@@ -1,0 +1,3 @@
+[submodule "article-protos"]
+	path = article-protos
+	url = git@github.com:KhalimovMukhammadjon/article-protos.git

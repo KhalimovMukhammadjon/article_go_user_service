@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package user_service;
+option go_package = "genproto/user_service";
+
+import "google/protobuf/empty.proto";
+import "user.proto";
+
+service UserService{
+    rpc Create(CreateUserRequest) returns(User);
+    rpc GetById(PrimaryKey) returns(User);
+    rpc GetAll(GetAllUserRequest) returns(GetAllUserResponse);
+    rpc Delete(PrimaryKey) returns(google.protobuf.Empty);
+    rpc Update(UpdateUserRequest) returns(google.protobuf.Empty);
+    rpc UpdatePatch(UpdatePatchUser) returns (User) {};
+}
